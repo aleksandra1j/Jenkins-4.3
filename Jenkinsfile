@@ -4,7 +4,7 @@ node {
     stage('Clone repository') {
         checkout scm
     }
-
+    
     stage('Build image') {
             app = docker.build("aleksandra1j/jenkins-4.3")
     }
