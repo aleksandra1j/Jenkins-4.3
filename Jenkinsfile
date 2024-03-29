@@ -6,11 +6,7 @@ node {
     }
 
     stage('Build image') {
-        if (env.BRANCH_NAME == 'dev') {
             app = docker.build("aleksandra1j/jenkins-4.3")
-        } else {
-            echo "Skipping Docker image build and push on branch ${env.BRANCH_NAME}"
-        }
     }
 
     stage('Push image') {
